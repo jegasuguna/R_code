@@ -1,10 +1,12 @@
 CacheMatrix <- function(m = matrix()) {
-  j <- NULL
+ # creating empty matrices
+ j <- NULL
   set <- function(y){
   m <<- n
   j <<- NULL
   }
   get <- function()m
+  #inverses
   setInverse <- function(inverse) j <<- inverse
   getInverse <- function() j 
   list(set = set, get = get, 
@@ -12,6 +14,7 @@ CacheMatrix <- function(m = matrix()) {
   getInverse = getInverse)
 }
 
+# getting cached data
 cacheSolve <- function(m, ...) {
   j <- m$getInverse()
   if(!is.null(j)){
